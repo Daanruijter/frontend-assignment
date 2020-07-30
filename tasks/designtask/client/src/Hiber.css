@@ -1,0 +1,243 @@
+@font-face {
+
+    font-family: 'Europa-Bold';
+
+    /* IE6-IE8 */
+    src: url('./fonts/Europa-Bold.woff') format('woff'),
+        /* IE6-IE8 */
+        url('./fonts/Europa-Bold.woff2') format('woff2'),
+        /* Modern Browsers */
+        url('./fonts/Europa-Bold.ttf') format('truetype'),
+
+}
+
+@font-face {
+
+    font-family: 'Europa-BoldItalic';
+
+    /* IE6-IE8 */
+    src: url('./fonts/Europa-BoldItalic.woff') format('woff'),
+        /* IE6-IE8 */
+        url('./fonts/Europa-BoldItalic.woff2') format('woff2'),
+        /* Modern Browsers */
+        url('./fonts/Europa-BoldItalic.ttf') format('truetype'),
+
+}
+
+@font-face {
+
+    font-family: 'Europa-Italic';
+
+    /* IE6-IE8 */
+    src: url('./fonts/Europa-Italic.woff') format('woff'),
+        /* IE6-IE8 */
+        url('./fonts/Europa-Italic.woff2') format('woff2'),
+        /* Modern Browsers */
+        url('./fonts/Europa-Italic.ttf') format('truetype'),
+
+}
+
+@font-face {
+
+    font-family: 'Europa-Light';
+
+    /* IE6-IE8 */
+    src: url('./fonts/Europa-Light.woff') format('woff'),
+        /* IE6-IE8 */
+        url('./fonts/Europa-Light.woff2') format('woff2'),
+        /* Modern Browsers */
+        url('./fonts/Europa-Light.ttf') format('truetype'),
+        url('./fonts/Europa-LightItalic.otf') format('otf'),
+
+}
+
+@font-face {
+
+    font-family: 'Europa-LightItalic';
+
+    /* IE6-IE8 */
+    src: url('./fonts/Europa-LightItalic.woff') format('woff'),
+        /* IE6-IE8 */
+        url('./fonts/Europa-LightItalic.woff2') format('woff2'),
+        /* Modern Browsers */
+        url('./fonts/Europa-LightItalic.ttf') format('truetype'),
+        url('./fonts/Europa-LightItalic.otf') format('otf'),
+
+}
+
+@font-face {
+
+    font-family: 'Europa-Regular';
+
+    /* IE6-IE8 */
+    src: url('./fonts/Europa-Regular.woff') format('woff'),
+        /* IE6-IE8 */
+        url('./fonts/Europa-Regular.woff2') format('woff2'),
+        /* Modern Browsers */
+        url('./fonts/Europa-Regular.ttf') format('truetype'),
+
+}
+
+
+.page-container {
+    height: 100%;
+
+}
+
+.section-one-container {
+    padding: 2%;
+    display: grid;
+    height: 300px;
+    background-color: lightcyan;
+    grid-template-rows: 40% 60%;
+}
+
+.headers-top {
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.big-font-size {
+    font-size: 140%;
+    font-weight: bold;
+}
+
+.centralize-text {
+    text-align: center;
+}
+
+form {
+    width: 100%;
+    height: 100%;
+}
+
+.form-content-container {
+    width: 100%;
+    height: 100%;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: grid;
+    grid-template-columns: 20% 15% 15% 15% 15% 20%;
+    grid-template-rows: 33.3% 33.3% 33.3%;
+}
+
+
+.form-question {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 4;
+
+}
+
+.form-question textarea {
+    padding-top: 2%;
+    height: 91%;
+    width: 95%;
+
+    padding-left: 2%;
+
+}
+
+.form-firstname {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+}
+
+.form-firstname input {
+    height: 80%;
+    width: 93%;
+    padding-left: 2%
+}
+
+.form-lastname {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+}
+
+.form-lastname input {
+    height: 80%;
+    width: 93%;
+    padding-left: 2%
+}
+
+.form-email {
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.form-email input {
+    height: 80%;
+    width: 96%;
+    padding-left: 1%
+}
+
+.form-button {
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+}
+
+.form-button input {
+    height: 93%;
+    width: 99%;
+    background-color: red;
+    color: white;
+    padding-left: 2%;
+    font-size: 105%;
+}
+
+.section-two-container {
+    margin-top: 5%;
+}
+
+.headers-bottom {
+    margin-bottom: 5%;
+}
+
+.faqs-header {
+    margin-bottom: 1%;
+    font-family: 'Europa-Italic';
+}
+
+.more-information-container {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.flex-plus-and-questions {
+    display: flex;
+}
+
+.plus-sign {
+    margin-right: 5%;
+}
+
+hr {
+    margin-top: 2%;
+    margin-bottom: 2%
+}
+
+.button-flexer {
+    display: flex;
+    justify-content: center;
+
+}
+
+.read-all-faqs-button {
+    height: 55px;
+    width: 350px;
+    background-color: red;
+    color: white;
+    font-size: 105%;
+}

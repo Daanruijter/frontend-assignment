@@ -6,24 +6,56 @@
  *
  * @example
  *    [
-  *      { country: 'Russia',  city: 'Moscow' },
-  *      { country: 'Belarus', city: 'Minsk' },
-  *      { country: 'Poland',  city: 'Warsaw' },
-  *      { country: 'Russia',  city: 'Saint Petersburg' },
-  *      { country: 'Poland',  city: 'Krakow' },
-  *      { country: 'Belarus', city: 'Brest' }
-  *    ]
-  *                      =>
-  *    [
-  *      { country: 'Belarus', city: 'Brest' },
-  *      { country: 'Belarus', city: 'Minsk' },
-  *      { country: 'Poland',  city: 'Krakow' },
-  *      { country: 'Poland',  city: 'Warsaw' },
-  *      { country: 'Russia',  city: 'Moscow' },
-  *      { country: 'Russia',  city: 'Saint Petersburg' }
-  */
+ *      { country: 'Russia',  city: 'Moscow' },
+ *      { country: 'Belarus', city: 'Minsk' },
+ *      { country: 'Poland',  city: 'Warsaw' },
+ *      { country: 'Russia',  city: 'Saint Petersburg' },
+ *      { country: 'Poland',  city: 'Krakow' },
+ *      { country: 'Belarus', city: 'Brest' }
+ *    ]
+ *                      =>
+ *    [
+ *      { country: 'Belarus', city: 'Brest' },
+ *      { country: 'Belarus', city: 'Minsk' },
+ *      { country: 'Poland',  city: 'Krakow' },
+ *      { country: 'Poland',  city: 'Warsaw' },
+ *      { country: 'Russia',  city: 'Moscow' },
+ *      { country: 'Russia',  city: 'Saint Petersburg' }
+ */
+
+//sorting the countries
 const sortCitiesArray = (arr) => {
-  throw new Error('Not implemented');
+  let countryArray = arr;
+
+  //sorting the countries
+  function compare(a, b) {
+    if (a.country < b.country) {
+      return -1;
+    }
+    if (a.country > b.country) {
+      return 1;
+    }
+    return 0;
+  }
+
+  let sortedCountryArray = countryArray.sort(compare);
+
+  //sort the cities too
+
+  function compareCity(a, b) {
+    if (a.country == b.country) {
+      if (a.city < b.city) {
+        return -1;
+      }
+      if (a.city > b.city) {
+        return 1;
+      }
+      return 0;
+    }
+  }
+
+  let sortedCountryAndCityArray = sortedCountryArray.sort(compareCity);
+  return sortedCountryAndCityArray;
 };
 
 /**
@@ -44,7 +76,12 @@ const sortCitiesArray = (arr) => {
  *   1678, 3  => 2000
  */
 const roundToPowerOfTen = (num, pow) => {
-  throw new Error('Not implemented');
+  let number = num;
+  let power = pow;
+  let roundingBase = Math.pow(10, power);
+  let roundedNumber = Math.round(number / roundingBase) * roundingBase;
+
+  return roundedNumber;
 };
 
 /**
@@ -60,7 +97,20 @@ const roundToPowerOfTen = (num, pow) => {
  *   34143 => 34143
  */
 const reverseInteger = (num) => {
-  throw new Error('Not implemented');
+  let number = num;
+  let numberArray = ("" + number).split("").map(function (v, i) {
+    return parseInt(v);
+  });
+
+  let reversedArray = [];
+  let reversedNumber = "";
+  for (i = numberArray.length - 1; i >= 0; i--) {
+    reversedArray.push(numberArray[i]);
+  }
+  for (j = 0; j < reversedArray.length; j++) {
+    reversedNumber += reversedArray[j];
+  }
+  return reversedNumber;
 };
 
 /**
@@ -95,7 +145,96 @@ const reverseInteger = (num) => {
  *
  */
 const timespanToHumanString = (startDate, endDate) => {
-  throw new Error('Not implemented');
+  let startDateUnix = new Date(startDate).getTime();
+  let endDateUnix = new Date(endDate).getTime();
+
+  let difference = endDateUnix - startDateUnix;
+
+  let differenceInSeconds = difference / 1000;
+
+  //first category
+  if (differenceInSeconds <= 45) {
+    return "a few seconds ago";
+  }
+  //second category
+  if (differenceInSeconds > 45 && differenceInSeconds <= 90) {
+    return "a minute ago";
+  }
+  //third category
+  if (differenceInSeconds > 90 && differenceInSeconds <= 60 * 45) {
+    if ((differenceInSeconds / 60) % 1 == 0.5) {
+      return Math.floor(differenceInSeconds / 60) + " minutes ago";
+    } else {
+      return Math.round(differenceInSeconds / 60) + " minutes ago";
+    }
+  }
+
+  //fourth category
+  if (differenceInSeconds > 60 * 45 && differenceInSeconds <= 90 * 60) {
+    return "an hour ago";
+  }
+
+  //fifth category
+  if (differenceInSeconds > 90 * 60 && differenceInSeconds <= 60 * 60 * 22) {
+    if ((differenceInSeconds / 3600) % 1 == 0.5) {
+      return Math.floor(differenceInSeconds / 3600) + " hours ago";
+    } else {
+      return Math.round(differenceInSeconds / 3600) + " hours ago";
+    }
+  }
+
+  //sixth category
+  if (
+    differenceInSeconds > 60 * 60 * 22 &&
+    differenceInSeconds <= 60 * 60 * 36
+  ) {
+    return "a day ago";
+  }
+
+  //seventh category
+  if (
+    differenceInSeconds > 60 * 60 * 36 &&
+    differenceInSeconds <= 60 * 60 * 24 * 25
+  ) {
+    if ((differenceInSeconds / (60 * 60 * 24)) % 1 == 0.5) {
+      return Math.floor(differenceInSeconds / (60 * 60 * 24)) + " days ago";
+    } else {
+      return Math.round(differenceInSeconds / (60 * 60 * 24)) + " days ago";
+    }
+  }
+
+  //eigth category
+  if (
+    differenceInSeconds > 60 * 60 * 24 * 25 &&
+    differenceInSeconds <= 60 * 60 * 24 * 45
+  ) {
+    return "a month ago";
+  }
+
+  //ninth category
+  if (
+    differenceInSeconds > 60 * 60 * 24 * 45 &&
+    differenceInSeconds <= 60 * 60 * 24 * 345
+  ) {
+    return (
+      Math.round(differenceInSeconds / (60 * 60 * 24 * 30)) + " months ago"
+    );
+  }
+
+  //tenth category
+  if (
+    differenceInSeconds > 60 * 60 * 24 * 345 &&
+    differenceInSeconds <= 60 * 60 * 24 * 545
+  ) {
+    return "a year ago";
+  }
+
+  //eleventh category
+  if (differenceInSeconds > 60 * 60 * 24 * 546) {
+    return (
+      Math.round(differenceInSeconds / (60 * 60 * 24 * 365)) + " years ago"
+    );
+  }
 };
 
 /**
@@ -114,8 +253,12 @@ const timespanToHumanString = (startDate, endDate) => {
 
 class Rectangle {
   constructor(width, height) {
-    throw new Error('Not implemented');
+    this.width = width;
+    this.height = height;
   }
+  getArea = function () {
+    return this.width * this.height;
+  };
 }
 
 /**
@@ -130,7 +273,7 @@ class Rectangle {
  *   'entente' => null
  */
 const findFirstSingleChar = (str) => {
-  throw new Error('Not implemented');
+  throw new Error("Not implemented");
 };
 
 /**
@@ -154,7 +297,12 @@ const findFirstSingleChar = (str) => {
  *   'Pa55'.match(validator) => false
  */
 const getPasswordValidator = (minLength) => {
-  throw new Error('Not implemented');
+  let testss = new RegExp(/^(?=.{8,})[a-zA-Z0-9]{1,7}$/);
+
+  // ^[a-zA-Z][0-9]\[a-z{6,}][a-z]*[A-Z]*
+
+  // let testss = new RegExp("/A-Z{1}/a-z{1}/[d]{1}/");
+  return testss;
 };
 
 module.exports = {

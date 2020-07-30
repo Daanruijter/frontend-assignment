@@ -1,6 +1,5 @@
 {
   "name": "frontend-assignment",
-  "version": "0.1",
   "description": "Tests for hiring new frontend engineers/devs",
   "scripts": {
     "test": "./node_modules/.bin/mocha",

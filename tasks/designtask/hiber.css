@@ -1,0 +1,84 @@
+@font-face {
+
+    font-family: 'Europa-Bold';
+
+    /* IE6-IE8 */
+    src: url('./fonts/Europa-Bold.woff') format('woff'),
+        /* IE6-IE8 */
+        url('./fonts/Europa-Bold.woff2') format('woff2'),
+        /* Modern Browsers */
+        url('./fonts/Europa-Bold.ttf') format('truetype'),
+
+}
+
+@font-face {
+
+    font-family: 'Europa-BoldItalic';
+
+    /* IE6-IE8 */
+    src: url('./fonts/Europa-BoldItalic.woff') format('woff'),
+        /* IE6-IE8 */
+        url('./fonts/Europa-BoldItalic.woff2') format('woff2'),
+        /* Modern Browsers */
+        url('./fonts/Europa-BoldItalic.ttf') format('truetype'),
+
+}
+
+@font-face {
+
+    font-family: 'Europa-Italic';
+
+    /* IE6-IE8 */
+    src: url('./fonts/Europa-Italic.woff') format('woff'),
+        /* IE6-IE8 */
+        url('./fonts/Europa-Italic.woff2') format('woff2'),
+        /* Modern Browsers */
+        url('./fonts/Europa-Italic.ttf') format('truetype'),
+
+}
+
+@font-face {
+
+    font-family: 'Europa-Light';
+
+    /* IE6-IE8 */
+    src: url('./fonts/Europa-Light.woff') format('woff'),
+        /* IE6-IE8 */
+        url('./fonts/Europa-Light.woff2') format('woff2'),
+        /* Modern Browsers */
+        url('./fonts/Europa-Light.ttf') format('truetype'),
+        url('./fonts/Europa-LightItalic.otf') format('otf'),
+
+}
+
+@font-face {
+
+    font-family: 'Europa-LightItalic';
+
+    /* IE6-IE8 */
+    src: url('./fonts/Europa-LightItalic.woff') format('woff'),
+        /* IE6-IE8 */
+        url('./fonts/Europa-LightItalic.woff2') format('woff2'),
+        /* Modern Browsers */
+        url('./fonts/Europa-LightItalic.ttf') format('truetype'),
+        url('./fonts/Europa-LightItalic.otf') format('otf'),
+
+}
+
+@font-face {
+
+    font-family: 'Europa-Regular';
+
+    /* IE6-IE8 */
+    src: url('./fonts/Europa-Regular.woff') format('woff'),
+        /* IE6-IE8 */
+        url('./fonts/Europa-Regular.woff2') format('woff2'),
+        /* Modern Browsers */
+        url('./fonts/Europa-Regular.ttf') format('truetype'),
+
+}
+
+.testit {
+    color: red;
+    font-family: 'Europa-Regular';
+}
